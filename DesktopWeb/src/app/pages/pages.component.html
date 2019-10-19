@@ -1,0 +1,39 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+
+        <img class="centerContent" mat-card-image src="../../../assets/Image/logotipo_PNG.png">
+        <br>
+        <mat-list role="list">
+            <mat-nav-list *ngIf="!user.stateVote">
+                <a mat-list-item style="background-color: blueviolet;" [routerLink]="['/inicio']">
+                    Votación</a>
+            </mat-nav-list>
+            <mat-nav-list *ngIf="user.rol == 'jurado'">
+                <a mat-list-item style="background-color: blueviolet;" [routerLink]="['/inicio/estadisticas']">
+                    Estadisticas
+                </a>
+            </mat-nav-list>
+            <mat-nav-list>
+                <a mat-list-item style="background-color: blueviolet;" (click)="singOut()">
+                    Cerrar Sesión
+                </a>
+            </mat-nav-list>
+        </mat-list>
+    </mat-drawer>
+
+
+    <mat-drawer-content>
+        <mat-toolbar color="primary">
+            <button type="button" mat-button (click)="drawer.toggle()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">view_headline</mat-icon>
+            </button>
+           <p class="alignText">Corte Electoral | Votante:
+            {{user.fullname}} | Rol: {{user.rol}}</p> 
+        </mat-toolbar>
+
+        <div class="example-sidenav-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+
+</mat-drawer-container>

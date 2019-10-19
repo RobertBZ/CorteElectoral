@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 300px;
+    
+    margin: 5px 5px 5px 5px;
+}
+
+.positionCard{
+    display: inline-table;
+}

@@ -1,0 +1,4 @@
+<h1>Señor(a) : {{user.fullname}} con ci: {{user.ci}}. Ya emitió su voto</h1>
+<button color="primary" mat-raised-button style="width: 100%;" (click)="singOut()">SALIR</button>
+
+<button *ngIf="user.rol != 'votante'" color="primary" mat-raised-button style="width: 100%;" (click)="loadStadistics()">Ver Estadisticas</button>

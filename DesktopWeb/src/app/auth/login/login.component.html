@@ -1,0 +1,18 @@
+<div class="content">
+    <div class="cardcontent">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img class="centerContent" mat-card-image src="../../../assets/Image/logotipo_PNG.png">
+            </mat-card-header>
+
+            <form [formGroup]="login">
+                <mat-form-field appearance="outline" class="inputDesign">
+                    <mat-label>Documento de indentidad</mat-label>
+                    <input matInput placeholder="Nro Documento" formControlName="ci">
+                    <mat-icon matSuffix>verified_user</mat-icon>
+                </mat-form-field>
+            </form>
+            <button mat-flat-button color="primary" style="width: 100%;" (click)="singIn()">Ingresar</button>
+        </mat-card>
+    </div>
+</div>
